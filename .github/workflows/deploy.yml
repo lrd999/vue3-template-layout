@@ -36,6 +36,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4 # 使用官方 GitHub Pages 部署 Action
         with:
-          branch: gh-pages # 将构建结果部署到 gh-pages 分支
-          folder: dist # 设置构建结果的目录，通常 Vue 和 React 等框架的构建输出在 dist 目录下
-          token: ${{ secrets.GITHUB_TOKEN }} # 使用 GitHub 自动生成的身份验证令牌
+          folder: dist
+          clean: true
