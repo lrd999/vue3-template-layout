@@ -1,8 +1,0 @@
-body {
-  overflow: hidden;
-  color: var(--el-text-color-primary);
-}
-
-#nprogress .bar {
-  background: var(--el-color-primary);
-}
