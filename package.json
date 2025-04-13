@@ -1,13 +1,36 @@
 {
   "name": "vue3-layout",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
+  "keywords": [
+    "vue-template",
+    "element-plus",
+    "tailwindcss",
+    "pinia",
+    "vue3",
+    "vite",
+    "esm"
+  ],
+  "homepage": "https://github.com/lrd999/vue3-template-layout",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lrd999/vue3-template-layout.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lrd999/vue3-template-layout/issues"
+  },
+  "author": {
+    "name": "lrd999",
+    "email": "liuruida999@gmail.com",
+    "url": "https://github.com/lrd999"
+  },
+  "license": "MIT",
   "dependencies": {
     "@imengyu/vue3-context-menu": "^1.4.6",
     "@vueuse/core": "^13.1.0",
@@ -31,5 +54,9 @@
     "unplugin-icons": "^22.1.0",
     "unplugin-vue-components": "^28.4.1",
     "vite": "^6.2.0"
+  },
+  "engines": {
+    "node": ">=22",
+    "pnpm": ">=10"
   }
 }
