@@ -30,6 +30,7 @@ jobs:
       - name: Deploy 🔧
         run: |
           pnpm install --no-frozen-lockfile
+          sed -i "s#VITE_PUBLIC_PATH = /#VITE_PUBLIC_PATH = /vue3-template-layout/#g" $(pwd)/.env.production
           pnpm build
           cd dist
 
