@@ -18,13 +18,20 @@ jobs:
         with:
           node-version: '22' # 使用的 Node.js 版本（根据需要修改）
 
+      - name: Install pnpm # 安装 pnpm
+        uses: pnpm/action-setup@v3
+        id: pnpm-install
+        with:
+          version: 10
+          run_install: false
+
       - name: Install dependencies
         run: | # 安装依赖，如果是 Vue、React 或其他框架，确保安装依赖
-          pnpm install
+          pnpm install --no-frozen-lockfile
 
       - name: Build the project
         run: | # 构建项目，确保你有构建命令（例如 Vue、React、Angular 项目）
-          pnpm run build
+          pnpm build
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4 # 使用官方 GitHub Pages 部署 Action
