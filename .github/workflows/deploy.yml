@@ -1,40 +1,40 @@
-name: Deploy to GitHub Pages
-
+name: Build and Deploy
+permissions:
+  contents: write
 on:
   push:
     branches:
-      - main # 监听 main 分支的推送
-
+      - gh-pages
+      
 jobs:
   deploy:
-    runs-on: ubuntu-latest # 运行环境，这里使用 Ubuntu 最新版
-
+    concurrency: ci-${{ github.ref }}
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout the repository
-        uses: actions/checkout@v3 # 拉取代码
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3 # 设置 Node.js 环境
+      - name: Install Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: '22' # 使用的 Node.js 版本（根据需要修改）
+          node-version: 20
+          registry-url: https://registry.npmjs.com/
 
-      - name: Install pnpm # 安装 pnpm
-        uses: pnpm/action-setup@v3
+      - uses: pnpm/action-setup@v3
+        name: Install pnpm
         id: pnpm-install
         with:
           version: 10
           run_install: false
 
-      - name: Install dependencies
-        run: | # 安装依赖，如果是 Vue、React 或其他框架，确保安装依赖
+      - name: Deploy 🔧
+        run: |
           pnpm install --no-frozen-lockfile
-
-      - name: Build the project
-        run: | # 构建项目，确保你有构建命令（例如 Vue、React、Angular 项目）
           pnpm build
+          cd dist
 
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4 # 使用官方 GitHub Pages 部署 Action
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
           clean: true
