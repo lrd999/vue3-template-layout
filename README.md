@@ -1,5 +1,17 @@
-# Vue 3 + TypeScript + Vite
+# Vue3 Layout
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## 简介
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+提供常见的后台关系系统的布局，不含鉴权等附加功能。
+
+## 技术栈
+
+- [Vue3](https://vuejs.org/)
+- [Vite](https://vite.dev/)
+- [ElementPlus](https://element-plus.org/zh-CN/)
+- [UnoCSS](https://unocss.dev/)
+
+## 预览
+
+<img src="./docs/preview-1.png" />
+<img src="./docs/preview-2.png" />
