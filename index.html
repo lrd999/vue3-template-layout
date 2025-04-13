@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .app-init-loading-wrapper {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .app-init-loading-icon-wrapper {
+        color: #f40;
+        animation: app-init-loading-animate 0.2s ease-in infinite alternate-reverse;
+      }
+      .app-init-loading-icon-wrapper svg {
+        width: 330px;
+        height: 330px;
+      }
+      .app-init-loading-desc {
+        margin-top: 30px;
+      }
+      @keyframes app-init-loading-animate {
+        from {
+          transform: translate(0, 0);
+        }
+        to {
+          transform: translate(-10px, -10px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="app-init-loading-wrapper">
+        <div class="app-init-loading-icon-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m2.8 3l16.87 15.82s.33.45-.09.89c-.41.44-.95.06-.95.06zm5.01 1.59l13.1 12.05s.32.44-.09.86c-.42.47-.96.09-.96.09zM4.29 8l13.1 12.03s.32.44-.09.88c-.42.45-.96.09-.96.09zm7.76-2.04l9.15 8.41s.22.31-.07.63c-.28.3-.66.03-.66.03zm-6.6 5.95l9.15 8.42s.22.31-.06.62c-.29.31-.67.05-.67.05zm10.93-3.99l4.17 3.82s.11.14-.05.29c-.12.14-.31.02-.31.02zM7.56 16.1l4.18 3.81s.11.15-.04.29c-.14.15-.33.02-.33.02z"/></svg>
+        </div>
+        <p class="app-init-loading-desc">正在加载资源..</p>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
